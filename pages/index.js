@@ -26,7 +26,15 @@ export default function Home(props) {
       <main className={styles.main}>
         <h1 className={styles.title}>Is that ship still stuck?</h1>
 
-        <p className={styles.description}>Yes.</p>
+        <p className={styles.description}>
+          <a
+            href="https://www.tiktok.com/@jonnystewartbass/video/6913909783548431618"
+            target="_blank"
+            rel="noopener norferrer"
+          >
+            Yes.
+          </a>
+        </p>
 
         <h3
           style={{
