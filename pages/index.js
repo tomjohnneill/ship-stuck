@@ -120,8 +120,7 @@ export default function Home(props) {
                 <div style={{ padding: 12 }}>
                   <h2 style={{ marginTop: 0 }}>{article.headline.main}</h2>
                   <span style={{ opacity: "60%" }}>
-                    Published:{" "}
-                    {new Date(article.pub_date).toLocaleString("en-gb")}
+                    Published: {new Date(article.pub_date).toLocaleString()}
                   </span>
                   <p>{article.snippet}</p>
                 </div>
@@ -159,14 +158,20 @@ export default function Home(props) {
 export async function getStaticProps() {
   const articles = await fetchData()
     .then((response) => response.json())
-    .then((data) => data?.response?.docs || []);
+    .then((data) => {
+      if (data?.response?.docs) {
+        return data?.response?.docs;
+      } else {
+        console.log({ data });
+        return [];
+      }
+    });
 
-  console.log({ articles });
   return {
     props: { articles },
     // we will attempt to re-generate the page:
     // - when a request comes in
     // - at most once every second
-    revalidate: 120,
+    revalidate: 150,
   };
 }

@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const API_KEY = "FMy9ZHTyyAHpubG2GCYHqxpAduuS6cuG";
+const API_KEY = "31oqGAKAzvnlM051Ll25mEZLwWHNmvxJ";
 
 export default async () => {
   return fetch(
