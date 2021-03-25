@@ -49,6 +49,17 @@ export default function Home(props) {
           </a>
         </p>
 
+        <div style={{ width: "100%", maxWidth: 600 }}>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<script type="text/javascript">
+  var width="100%";var height="400";var zoom="14"; 
+  var mmsi=353136000;
+</script><script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>`,
+            }}
+          />
+        </div>
+
         <h3
           style={{
             textAlign: "left",
