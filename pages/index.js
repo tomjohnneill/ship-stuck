@@ -3,8 +3,23 @@ import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import fetchData from "./api/times";
 
+const minute = 1000 * 60;
+const hour = 60 * minute;
+const day = 24 * hour;
+
 export default function Home(props) {
   const { articles } = props;
+
+  const suezTime = new Date("2021-03-23T09:40:00.000Z");
+  const now = new Date();
+  const diff = now - suezTime;
+
+  console.log({ diff });
+
+  const days = Math.floor(diff / day);
+  const hours = Math.floor((diff - days * day) / hour);
+  const minutes = Math.floor((diff - days * day - hours * hour) / minute);
+  const durationText = `It's been like this for ${days} days, ${hours} hours and ${minutes} minutes.`;
 
   return (
     <div className={styles.container}>
@@ -48,6 +63,7 @@ export default function Home(props) {
             Yes.
           </a>
         </p>
+        <p>{durationText}</p>
 
         <div style={{ width: "100%", maxWidth: 600 }}>
           <div
