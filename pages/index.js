@@ -22,6 +22,11 @@ export default function Home(props) {
         <meta name="twitter:image" content="/evergreen.jpg" />
         <meta property="og:image" content="/evergreen.jpg" />
         <meta name="twitter:image:alt" content="That ship" />
+        <meta
+          property="og:description"
+          content="You know that ship, the one possibly still stuck in the canal. Is it still there? Find out that, and really only that, at this website."
+        />
+        <meta property="og:title" content="Is this ship still stuck?" />
         <meta property="og:url" content={"https://istheshipstillstuck.com"} />
       </Head>
 
