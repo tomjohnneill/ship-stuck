@@ -21,11 +21,11 @@ export default function Home(props) {
         />
         <meta
           name="twitter:image"
-          content="https://istheshipstillstuck.com/evergreen.jpg"
+          content="https://istheshipstillstuck.com/ever-given.jpg"
         />
         <meta
           property="og:image"
-          content="https://istheshipstillstuck.com/evergreen.jpg"
+          content="https://istheshipstillstuck.com/ever-given.jpg"
         />
         <meta name="twitter:image:alt" content="That ship" />
         <meta
