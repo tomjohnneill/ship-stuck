@@ -20,7 +20,9 @@ export default function Home(props) {
           content="You know that ship, the one possibly still stuck in the canal. Is it still there? Find out that, and really only that, at this website."
         />
         <meta name="twitter:image" content="/evergreen.jpg" />
+        <meta property="og:image" content="/evergreen.jpg" />
         <meta name="twitter:image:alt" content="That ship" />
+        <meta property="og:url" content={"https://istheshipstillstuck.com"} />
       </Head>
 
       <main className={styles.main}>
