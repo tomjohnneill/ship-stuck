@@ -22,9 +22,13 @@ export default function Home(props) {
   const days = Math.floor(diff / day);
   const hours = Math.floor((diff - days * day) / hour);
   const minutes = Math.floor((diff - days * day - hours * hour) / minute);
-  const durationText = `It's been like this for ${days} days, ${hours} hours and ${minutes} minutes.`;
   const hoursConversion = Math.floor(((days * 24) + hours + (minutes / 60))* 400000000); //https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html
   const costText = `Total Estimated Lost Cost: $${formatNumber(hoursConversion)} dollars`;
+
+
+  const durationText = `It's been like this for ${days} days, ${hours} ${
+    hours === 1 ? "hour" : "hours"
+  } and ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
 
   return (
     <div className={styles.container}>
