@@ -191,6 +191,20 @@ export default function Home(props) {
         </div>
       </main>
 
+      <a
+        href="https://simpleanalytics.com/istheshipstillstuck.com?utm_source=istheshipstillstuck.com&utm_content=badge"
+        referrerpolicy="origin"
+        target="_blank"
+      >
+        <img
+          style={{ marginBottom: 16 }}
+          src="https://simpleanalyticsbadge.com/istheshipstillstuck.com"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          crossorigin="anonymous"
+        />
+      </a>
+
       <footer className={styles.footer}>
         <a
           href="https://twitter.com/TomJNeill"
