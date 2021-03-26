@@ -6,6 +6,10 @@ import fetchData from "./api/times";
 const minute = 1000 * 60;
 const hour = 60 * minute;
 const day = 24 * hour;
+function formatNumber(num) {
+  console.log({ num });
+  return `$${Math.round(num / 1000000000).toString()} billion dollars`;
+}
 
 export default function Home(props) {
   const { articles } = props;
@@ -19,6 +23,10 @@ export default function Home(props) {
   const days = Math.floor(diff / day);
   const hours = Math.floor((diff - days * day) / hour);
   const minutes = Math.floor((diff - days * day - hours * hour) / minute);
+  const hoursConversion = Math.floor(
+    (days * 24 + hours + minutes / 60) * 400000000
+  ); //https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html
+  const costText = `It has cost us ${formatNumber(hoursConversion)}, so far...`;
 
   const durationText = `It's been like this for ${days} days, ${hours} ${
     hours === 1 ? "hour" : "hours"
@@ -66,13 +74,22 @@ export default function Home(props) {
             Yes.
           </a>
         </p>
-        <p>{durationText}</p>
+        <p style={{ textAlign: "center" }}>
+          {durationText}. <br />
+          <a
+            href="https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {costText}
+          </a>
+        </p>
 
         <div style={{ width: "100%", maxWidth: 600 }}>
           <div
             dangerouslySetInnerHTML={{
               __html: `<script type="text/javascript">
-  var width="100%";var height="400";var zoom="14"; 
+  var width="100%";var height="400";var zoom="14";
   var mmsi=353136000;
 </script><script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>`,
             }}
