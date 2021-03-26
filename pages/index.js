@@ -87,7 +87,7 @@ export default function Home(props) {
               }}
             >
               <a
-                href="www.openstreetmap.org/copyright"
+                href="https://www.openstreetmap.org/copyright"
                 target="_blank"
                 rel="noopener noreferrer"
               >
