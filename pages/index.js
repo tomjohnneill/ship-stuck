@@ -81,6 +81,15 @@ export default function Home(props) {
             Yes.
           </a>
         </p>
+
+        <a
+          href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
+          class="twitter-follow-button"
+          data-show-count="false"
+        >
+          Follow @tomjneill
+        </a>
+
         <p style={{ textAlign: "center" }}>
           {durationText}. <br />
           <a
