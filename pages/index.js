@@ -114,7 +114,7 @@ export default function Home(props) {
           <img src="https://developer.nytimes.com/files/poweredby_nytimes_200c.png" />
         </h3>
         <div className={styles.grid}>
-          {articles?.map((article) => (
+          {articles?.slice(0, 3)?.map((article) => (
             <a href={article.web_url} key={article._id}>
               <section
                 style={{
