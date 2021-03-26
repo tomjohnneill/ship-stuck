@@ -8,7 +8,7 @@ const hour = 60 * minute;
 const day = 24 * hour;
 function formatNumber(num) {
   console.log({ num });
-  return `$${Math.round(num / 1000000000).toString()} billion dollars`;
+  return `$${Math.round(num / 1000000000).toString()} billion`;
 }
 
 export default function Home(props) {
