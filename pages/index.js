@@ -12,7 +12,7 @@ function formatNumber(num) {
 }
 
 export default function Home(props) {
-  const { articles } = props;
+  const { articles } = props || {};
 
   const suezTime = new Date("2021-03-23T09:40:00.000Z");
   const now = new Date();
@@ -191,6 +191,7 @@ export default function Home(props) {
   );
 }
 
+/*
 export async function getStaticProps() {
   const articles = await fetchData()
     .then((response) => response.json())
@@ -211,3 +212,4 @@ export async function getStaticProps() {
     revalidate: 150,
   };
 }
+*/
