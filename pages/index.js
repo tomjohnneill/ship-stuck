@@ -26,7 +26,7 @@ export default function Home(props) {
   const hoursConversion = Math.floor(
     (days * 24 + hours + minutes / 60) * 400000000
   ); //https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html
-  const costText = `It has cost us ${formatNumber(hoursConversion)}, so far...`;
+  const costText = `Losses are estimated at ${formatNumber(hoursConversion)}, so far...`;
 
   const durationText = `It's been like this for ${days} days, ${hours} ${
     hours === 1 ? "hour" : "hours"
