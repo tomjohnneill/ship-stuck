@@ -32,6 +32,13 @@ export default function Home(props) {
     hours === 1 ? "hour" : "hours"
   } and ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
 
+  const affirmativeKeywords = ['Yes', 'Yup', 'You Betcha', 'Definitely', 'Affirmative', 'Yep', 'Indubitably', 'Absolutely', 'Aye Matey', 'Verily', 'Uh-huh'];
+
+  const getAffirmativeMessage = () => {
+    const i = Math.floor(Math.random() * affirmativeKeywords.length);
+    return affirmativeKeywords[i] || "Yes";
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -71,7 +78,7 @@ export default function Home(props) {
             target="_blank"
             rel="noopener norferrer"
           >
-            Yes.
+            {getAffirmativeMessage()}
           </a>
         </p>
         <p style={{ textAlign: "center" }}>
