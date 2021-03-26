@@ -22,6 +22,11 @@ class MyDocument extends Document {
         <noscript>
           <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" />
         </noscript>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
       </Html>
     );
   }
