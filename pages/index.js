@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import fetchData from "./api/times";
 
 const minute = 1000 * 60;
 const hour = 60 * minute;
@@ -12,7 +11,9 @@ function formatNumber(num) {
 }
 
 export default function Home(props) {
-  const { articles } = props || {};
+  const [articles, setArticles] = useState([]);
+
+  console.log({ articles });
 
   const suezTime = new Date("2021-03-23T09:40:00.000Z");
   const now = new Date();
@@ -31,6 +32,12 @@ export default function Home(props) {
   const durationText = `It's been like this for ${days} days, ${hours} ${
     hours === 1 ? "hour" : "hours"
   } and ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+
+  useEffect(() => {
+    fetch("/api/times")
+      .then((response) => response.json())
+      .then((data) => setArticles(data));
+  }, []);
 
   return (
     <div className={styles.container}>
