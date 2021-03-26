@@ -94,6 +94,24 @@ export default function Home(props) {
 </script><script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>`,
             }}
           />
+          <div style={{ width: "100%", textAlign: "right" }}>
+            <p
+              style={{
+                opacity: "60%",
+                marginTop: 0,
+                marginBottom: 0,
+                fontSize: "12px",
+              }}
+            >
+              <a
+                href="https://www.openstreetmap.org/copyright"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                © OpenStreetMap contributors
+              </a>
+            </p>
+          </div>
         </div>
 
         <h3
