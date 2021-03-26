@@ -11,7 +11,6 @@ export default async (req, res) => {
       if (data?.response?.docs) {
         return data?.response?.docs;
       } else {
-        console.log({ data });
         return [];
       }
     });
