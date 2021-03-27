@@ -233,11 +233,19 @@ export default function Home(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <p style={{ marginBottom: 0 }}>
+          <p style={{ marginBottom: 8 }}>
             Made by <span style={{ color: "blue" }}>Tom Neill</span> as a bit of
             fun.
           </p>
-        </a>{" "}
+        </a>
+        <a
+          style={{ marginTop: 8 }}
+          href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
+          class="twitter-follow-button"
+          data-show-count="false"
+        >
+          Follow @tomjneill
+        </a>
         <a
           href="https://xkcd.com/937/"
           target="_blank"
