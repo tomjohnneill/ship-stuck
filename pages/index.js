@@ -87,12 +87,12 @@ export default function Home(props) {
           href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/39548461347666529560377967944030380563003576059826604202233011364559964864513"
           target="_blank"
           style={{
-            border: "1px solid #DBDBDB",
+            border: '1px solid #DBDBDB',
             borderRadius: 4,
             padding: 4,
-            display: "flex",
-            alignItems: "center",
-            fontSize: "12px",
+            display: 'flex',
+            alignItems: 'center',
+            fontSize: '12px',
           }}
           rel="noopener norferrer"
         >
@@ -104,7 +104,7 @@ export default function Home(props) {
           Bid on the NFT of this page (on *OpenSea* lol)
         </a>
 
-        <p style={{ textAlign: "center" }}>
+        <p style={{ textAlign: 'center' }}>
           {durationText}. <br />
           <a
             href="https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html"
@@ -214,53 +214,59 @@ export default function Home(props) {
         </div>
       </main>
 
-      <a
-        href="https://simpleanalytics.com/istheshipstillstuck.com?utm_source=istheshipstillstuck.com&utm_content=badge"
-        referrerpolicy="origin"
-        target="_blank"
-      >
-        <img
-          style={{ marginBottom: 16 }}
-          src="https://simpleanalyticsbadge.com/istheshipstillstuck.com"
-          loading="lazy"
-          referrerpolicy="no-referrer"
-          crossorigin="anonymous"
-        />
-      </a>
+      <section style={{backgroundColor: "white", width: "100%", display: "grid", placeItems: "center"}}>
+        <a
+          href="https://simpleanalytics.com/istheshipstillstuck.com?utm_source=istheshipstillstuck.com&utm_content=badge"
+          referrerpolicy="origin"
+          target="_blank"
+        >
+          <img
+            style={{ marginBottom: 16 }}
+            src="https://simpleanalyticsbadge.com/istheshipstillstuck.com"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            crossorigin="anonymous"
+          />
+        </a>
+      </section>
 
       <footer className={styles.footer}>
-        <a
-          href="https://twitter.com/TomJNeill"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p style={{ marginBottom: 8 }}>
-            Made by <span style={{ color: "blue" }}>Tom Neill</span> as a bit of
-            fun.
-          </p>
-        </a>
-        <a
-          style={{ marginTop: 8 }}
-          href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
-          class="twitter-follow-button"
-          data-show-count="false"
-        >
-          Follow @tomjneill
-        </a>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: "center" }}>
+          <a
+            href="https://twitter.com/TomJNeill"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p style={{ marginBottom: 8, marginRight: 12 }}>
+              Made by <span style={{ color: 'blue' }}>Tom Neill</span> as a bit
+              of fun.
+            </p>
+          </a>
+          <a
+            href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
+            class="twitter-follow-button"
+            data-show-count="false"
+          >
+            Follow @tomjneill
+          </a>
+        </div>
         <a
           href="https://xkcd.com/937/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <p>
-            <span style={{ color: 'blue', marginBottom: "3rem"}}>Tornado Guard</span> warnings apply.
+            <span style={{ color: 'blue', marginBottom: '3rem' }}>
+              Tornado Guard
+            </span>{' '}
+            warnings apply.
           </p>
         </a>
       </footer>
       <div className={styles.evergivencontainer}>
         <img
           src="/evergiven.svg"
-          height="40px"
+          height="45px"
           className={styles.evergiven}
           id={styles.float}
         />
