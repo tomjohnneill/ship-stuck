@@ -100,7 +100,7 @@ export default function Home(props) {
             src="https://opensea.io/static/images/logos/opensea-logo.png"
             alt="opensea"
           />
-          Bid on the NFT of this page (lol)
+          Bid on the NFT of this page (on *OpenSea* lol)
         </a>
 
         <p style={{ textAlign: "center" }}>
