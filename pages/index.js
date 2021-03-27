@@ -1,6 +1,7 @@
-import Head from "next/head";
-import { useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import styles from '../styles/Home.module.css';
+import Waves from '../components/Waves';
 
 const minute = 1000 * 60;
 const hour = 60 * minute;
@@ -15,7 +16,7 @@ export default function Home(props) {
 
   console.log({ articles });
 
-  const suezTime = new Date("2021-03-23T09:40:00.000Z");
+  const suezTime = new Date('2021-03-23T09:40:00.000Z');
   const now = new Date();
   const diff = now - suezTime;
 
@@ -30,13 +31,13 @@ export default function Home(props) {
   const costText = `It has cost us ${formatNumber(hoursConversion)}, so far...`;
 
   const durationText = `It's been like this for ${days} days, ${hours} ${
-    hours === 1 ? "hour" : "hours"
-  } and ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+    hours === 1 ? 'hour' : 'hours'
+  } and ${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`;
 
   useEffect(() => {
-    fetch("/api/times")
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
+    fetch('/api/times')
+      .then(response => response.json())
+      .then(data => setArticles(data));
   }, []);
 
   return (
@@ -66,7 +67,7 @@ export default function Home(props) {
           content="You know that ship, the one possibly still stuck in the canal. Is it still there? Find out that, and really only that, at this website."
         />
         <meta property="og:title" content="Is this ship still stuck?" />
-        <meta property="og:url" content={"https://istheshipstillstuck.com"} />
+        <meta property="og:url" content={'https://istheshipstillstuck.com'} />
       </Head>
 
       <main className={styles.main}>
@@ -78,10 +79,10 @@ export default function Home(props) {
             target="_blank"
             rel="noopener norferrer"
           >
-            Yes.
+            Yes
           </a>
         </p>
-        <p style={{ textAlign: "center" }}>
+        <p style={{ textAlign: 'center' }}>
           {durationText}. <br />
           <a
             href="https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html"
@@ -92,7 +93,7 @@ export default function Home(props) {
           </a>
         </p>
 
-        <div style={{ width: "100%", maxWidth: 600 }}>
+        <div style={{ width: '100%', maxWidth: 600 }}>
           <div
             dangerouslySetInnerHTML={{
               __html: `<script type="text/javascript">
@@ -101,13 +102,13 @@ export default function Home(props) {
 </script><script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>`,
             }}
           />
-          <div style={{ width: "100%", textAlign: "right" }}>
+          <div style={{ width: '100%', textAlign: 'right' }}>
             <p
               style={{
-                opacity: "60%",
+                opacity: '60%',
                 marginTop: 0,
                 marginBottom: 0,
-                fontSize: "12px",
+                fontSize: '12px',
               }}
             >
               <a
@@ -123,48 +124,48 @@ export default function Home(props) {
 
         <h3
           style={{
-            textAlign: "left",
-            width: "100%",
+            textAlign: 'left',
+            width: '100%',
             maxWidth: 500,
-            margin: "auto",
+            margin: 'auto',
             marginBottom: 16,
             marginTop: 48,
-            alignItems: "center",
-            fontSize: "24px",
-            display: "flex",
-            justifyContent: "space-between",
+            alignItems: 'center',
+            fontSize: '24px',
+            display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
           Latest headlines
           <img src="https://developer.nytimes.com/files/poweredby_nytimes_200c.png" />
         </h3>
         <div className={styles.grid}>
-          {articles?.slice(0, 3)?.map((article) => (
+          {articles?.slice(0, 3)?.map(article => (
             <a href={article.web_url} key={article._id}>
               <section
                 style={{
                   maxWidth: 500,
                   borderRadius: 4,
-                  overflow: "hidden",
+                  overflow: 'hidden',
                   marginBottom: 32,
-                  border: "1px solid #DBDBDB",
+                  border: '1px solid #DBDBDB',
                 }}
               >
                 {article.multimedia[0]?.url ? (
                   <img
                     src={`https://nytimes.com/${article.multimedia[0]?.url}`}
                     style={{
-                      width: "100%",
+                      width: '100%',
                       height: 250,
-                      objectFit: "cover",
+                      objectFit: 'cover',
                     }}
                   />
                 ) : (
                   <div
                     style={{
-                      display: "flex",
-                      width: "100%",
-                      justifyContent: "center",
+                      display: 'flex',
+                      width: '100%',
+                      justifyContent: 'center',
                     }}
                   >
                     <img
@@ -172,7 +173,7 @@ export default function Home(props) {
                       alt="NYT Logo"
                       style={{
                         width: 200,
-                        marginX: "auto",
+                        marginX: 'auto',
                       }}
                     />
                   </div>
@@ -180,7 +181,7 @@ export default function Home(props) {
 
                 <div style={{ padding: 12 }}>
                   <h2 style={{ marginTop: 0 }}>{article.headline.main}</h2>
-                  <span style={{ opacity: "60%" }}>
+                  <span style={{ opacity: '60%' }}>
                     Published: {new Date(article.pub_date).toLocaleString()}
                   </span>
                   <p>{article.snippet}</p>
@@ -212,20 +213,29 @@ export default function Home(props) {
           rel="noopener noreferrer"
         >
           <p style={{ marginBottom: 0 }}>
-            Made by <span style={{ color: "blue" }}>Tom Neill</span> as a bit of
+            Made by <span style={{ color: 'blue' }}>Tom Neill</span> as a bit of
             fun.
           </p>
-        </a>{" "}
+        </a>{' '}
         <a
           href="https://xkcd.com/937/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <p>
-            <span style={{ color: "blue" }}>Tornado Guard</span> warnings apply.
+            <span style={{ color: 'blue', marginBottom: "3rem"}}>Tornado Guard</span> warnings apply.
           </p>
         </a>
       </footer>
+      <div className={styles.evergivencontainer}>
+        <img
+          src="/evergiven.svg"
+          height="40px"
+          className={styles.evergiven}
+          id={styles.float}
+        />
+      </div>
+      <Waves />
     </div>
   );
 }
