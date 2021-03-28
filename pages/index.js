@@ -36,9 +36,9 @@ const bookLinks = [
   },
   {
     ukLink:
-      "https://www.amazon.co.uk/gp/product/0691150095/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0691150095&linkCode=as2&tag=istheshipstil-21&linkId=1669f7577bb2d5ccb5c32d50a8eaa0a0",
+      "https://www.amazon.co.uk/gp/product/0802144160?ie=UTF8&linkCode=ll1&tag=istheshipstil-21&linkId=28daf238a6b893d7174d6383591b1d8a&language=en_GB&ref_=as_li_ss_tl",
     link:
-      "https://www.amazon.com/gp/product/0691150095/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691150095&linkCode=as2&tag=istheshipstil-20&linkId=f2663da8713528b4910d06a037b53c06",
+      "https://www.amazon.com/gp/product/0802144160/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0802144160&linkCode=as2&tag=istheshipstil-20&linkId=790344b5b95464d8f300581020eeeb3d",
     title: "A Splendid Exchange - William Bernstein",
     subtitle: "How Trade Shaped the World",
     image: "/splendid.jpg",
