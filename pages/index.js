@@ -13,14 +13,13 @@ function formatNumber(num) {
 const bookLinks = [
   {
     link:
-      "https://www.amazon.com/gp/product/1846272998/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1846272998&linkCode=as2&tag=istheshipstil-20&linkId=8a694936874a7626f62158cb61061330",
+      "https://www.amazon.com/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-20&linkId=6d33695f2c14c9f1bf40ee397713997e",
     ukLink:
-      "https://www.amazon.co.uk/gp/product/1846272998/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1846272998&linkCode=as2&tag=istheshipstil-21&linkId=02eeab11810bdde81b8784ecc1e4bba3",
-    title: "Deep Sea and Foreign Going - Rose George",
-    subtitle:
-      "Inside Shipping, the Invisible Industry that Brings You 90% of Everything",
+      "https://www.amazon.co.uk/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-21&linkId=9332ba80ee7763ffdb4af0bee2883cb7",
+    title: "The Box - Marc Levinson",
+    subtitle: "How the Shipping Container Made the World Smaller",
     image: "/deepsea.jpg",
-    description: "An account of what life is actually like on a cargo ship.",
+    description: "The Citizen Kane of books about shipping.",
   },
   {
     ukLink:
