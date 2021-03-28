@@ -14,7 +14,7 @@ const bookLinks = [
   {
     link:
       "https://www.amazon.com/gp/product/1846272998/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1846272998&linkCode=as2&tag=istheshipstil-20&linkId=8a694936874a7626f62158cb61061330",
-    title: "Deep Sea and Foreign Going",
+    title: "Deep Sea and Foreign Going - Rose George",
     subtitle:
       "Inside Shipping, the Invisible Industry that Brings You 90% of Everything",
     image: "/deepsea.jpg",
@@ -24,7 +24,7 @@ const bookLinks = [
     link:
       "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
 
-    title: "Prisoners of Geography",
+    title: "Prisoners of Geography - Tim Marshall",
     subtitle:
       "Ten Maps That Tell You Everything You Need To Know About Global Politics",
     description:
@@ -34,7 +34,7 @@ const bookLinks = [
   {
     link:
       "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
-    title: "The Invisible Hook",
+    title: "The Invisible Hook - Peter Leeson",
     subtitle: "The Hidden Economics of Pirates",
     image: "/pirates.jpg",
     description:
