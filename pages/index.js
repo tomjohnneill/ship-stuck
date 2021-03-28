@@ -196,7 +196,7 @@ export default function Home(props) {
                 }}
               >
                 <div style={{ fontWeight: 600 }}>{item.title}</div>
-                <div style={{ opacity: 80 }}>{item.subtitle}</div>
+                <div style={{ opacity: "80%" }}>{item.subtitle}</div>
                 <p className="book-description">{item.description}</p>
               </div>
             </a>
