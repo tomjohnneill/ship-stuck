@@ -10,6 +10,38 @@ function formatNumber(num) {
   return `$${Math.round(num / 1000000000).toString()} billion`;
 }
 
+const bookLinks = [
+  {
+    link:
+      "https://www.amazon.com/gp/product/1846272998/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1846272998&linkCode=as2&tag=istheshipstil-20&linkId=8a694936874a7626f62158cb61061330",
+    title: "Deep Sea and Foreign Going",
+    subtitle:
+      "Inside Shipping, the Invisible Industry that Brings You 90% of Everything",
+    image: "/deepsea.jpg",
+    description: "An account of what life is actually like on a cargo ship.",
+  },
+  {
+    link:
+      "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
+
+    title: "Prisoners of Geography",
+    subtitle:
+      "Ten Maps That Tell You Everything You Need To Know About Global Politics",
+    description:
+      "How do things like shipping lanes affect who goes to war with whom?",
+    image: "/prisoners.jpg",
+  },
+  {
+    link:
+      "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
+    title: "The Invisible Hook",
+    subtitle: "The Hidden Economics of Pirates",
+    image: "/pirates.jpg",
+    description:
+      "Not exactly related to canals... but everyone likes reading stuff about pirates right?",
+  },
+];
+
 export default function Home(props) {
   const [articles, setArticles] = useState([]);
 
@@ -143,6 +175,46 @@ export default function Home(props) {
           </div>
         </div>
 
+        <div style={{ maxWidth: 600, width: "100%", margin: "auto" }}>
+          <h3 style={{ fontSize: "24px", marginBottom: 0 }}>
+            Some good books on the topic
+          </h3>
+          <p style={{ opacity: "80%", fontSize: "12px", marginBottom: 16 }}>
+            These are affiliate links, I get a small fee if you buy one which
+            will help cover the cost of hosting this site. I have no connection
+            to the authors, I just liked their books.
+          </p>
+
+          {bookLinks.map((item) => (
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                borderRadius: 6,
+                overflow: "hidden",
+                marginBottom: 16,
+                border: "1px solid #DBDBDB",
+              }}
+            >
+              <img src={item.image} style={{ height: 120 }} />
+              <div
+                style={{
+                  paddingTop: 8,
+                  paddingBottom: 8,
+                  paddingLeft: 12,
+                  paddingRight: 8,
+                }}
+              >
+                <div style={{ fontWeight: 600 }}>{item.title}</div>
+                <div style={{ opacity: 80 }}>{item.subtitle}</div>
+                <p className="book-description">{item.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+
         <h3
           style={{
             textAlign: "left",
@@ -256,6 +328,22 @@ export default function Home(props) {
           </p>
         </a>
       </footer>
+      <style jsx>
+        {`
+          .book-description {
+            opacity: 80%;
+            font-size: 14px;
+            margin-bottom: 0;
+            margin-top: 8;
+          }
+
+          @media only screen and (max-width: 600px) {
+            .book-description {
+              display: none;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
