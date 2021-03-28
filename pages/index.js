@@ -14,6 +14,8 @@ const bookLinks = [
   {
     link:
       "https://www.amazon.com/gp/product/1846272998/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1846272998&linkCode=as2&tag=istheshipstil-20&linkId=8a694936874a7626f62158cb61061330",
+    ukLink:
+      "https://www.amazon.co.uk/gp/product/1846272998/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1846272998&linkCode=as2&tag=istheshipstil-21&linkId=02eeab11810bdde81b8784ecc1e4bba3",
     title: "Deep Sea and Foreign Going - Rose George",
     subtitle:
       "Inside Shipping, the Invisible Industry that Brings You 90% of Everything",
@@ -21,6 +23,8 @@ const bookLinks = [
     description: "An account of what life is actually like on a cargo ship.",
   },
   {
+    ukLink:
+      "https://www.amazon.co.uk/gp/product/1783962437/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1783962437&linkCode=as2&tag=istheshipstil-21&linkId=f5ebc770e11dfcd130d1434c3c3d867c",
     link:
       "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
 
@@ -32,6 +36,8 @@ const bookLinks = [
     image: "/prisoners.jpg",
   },
   {
+    ukLink:
+      "https://www.amazon.co.uk/gp/product/0691150095/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0691150095&linkCode=as2&tag=istheshipstil-21&linkId=1669f7577bb2d5ccb5c32d50a8eaa0a0",
     link:
       "https://www.amazon.com/gp/product/0691150095/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691150095&linkCode=as2&tag=istheshipstil-20&linkId=f2663da8713528b4910d06a037b53c06",
     title: "The Invisible Hook - Peter Leeson",
@@ -51,7 +57,17 @@ export default function Home(props) {
   const now = new Date();
   const diff = now - suezTime;
 
+  const [isUK, setIsUK] = useState(false);
+
   console.log({ diff });
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.navigator) {
+      const { languages } = window.navigator;
+      if (languages?.[0] === "en-GB") {
+        setIsUK(true);
+      }
+    }
+  }, [typeof window]);
 
   const days = Math.floor(diff / day);
   const hours = Math.floor((diff - days * day) / hour);
@@ -175,7 +191,7 @@ export default function Home(props) {
 
           {bookLinks.map((item) => (
             <a
-              href={item.link}
+              href={isUK ? item.ukLink : item.link}
               target="_blank"
               rel="noopener noreferrer"
               style={{
