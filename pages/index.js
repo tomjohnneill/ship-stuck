@@ -83,24 +83,12 @@ export default function Home(props) {
         </p>
 
         <a
-          href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/39548461347666529560377967944030380563003576059826604202233011364559964864513"
-          target="_blank"
-          style={{
-            border: "1px solid #DBDBDB",
-            borderRadius: 4,
-            padding: 4,
-            display: "flex",
-            alignItems: "center",
-            fontSize: "12px",
-          }}
-          rel="noopener norferrer"
+          style={{ marginTop: 8 }}
+          href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
+          class="twitter-follow-button"
+          data-show-count="false"
         >
-          <img
-            style={{ height: 24, marginRight: 8 }}
-            src="https://opensea.io/static/images/logos/opensea-logo.png"
-            alt="opensea"
-          />
-          Bid on the NFT of this page (on *OpenSea* lol)
+          Follow @tomjneill
         </a>
 
         <p style={{ textAlign: "center" }}>
@@ -142,6 +130,28 @@ export default function Home(props) {
             </p>
           </div>
         </div>
+
+        <a
+          href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/39548461347666529560377967944030380563003576059826604202233011364559964864513"
+          target="_blank"
+          style={{
+            border: "1px solid #DBDBDB",
+            borderRadius: 4,
+            padding: 4,
+            display: "flex",
+            alignItems: "center",
+            fontSize: "12px",
+            margin: "8px 0px",
+          }}
+          rel="noopener norferrer"
+        >
+          <img
+            style={{ height: 24, marginRight: 8 }}
+            src="https://opensea.io/static/images/logos/opensea-logo.png"
+            alt="opensea"
+          />
+          Bid on the NFT of this page (on *OpenSea* lol)
+        </a>
 
         <h3
           style={{
@@ -228,24 +238,6 @@ export default function Home(props) {
       </a>
 
       <footer className={styles.footer}>
-        <a
-          href="https://twitter.com/TomJNeill"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p style={{ marginBottom: 8 }}>
-            Made by <span style={{ color: "blue" }}>Tom Neill</span> as a bit of
-            fun.
-          </p>
-        </a>
-        <a
-          style={{ marginTop: 8 }}
-          href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
-          class="twitter-follow-button"
-          data-show-count="false"
-        >
-          Follow @tomjneill
-        </a>
         <a
           href="https://xkcd.com/937/"
           target="_blank"
