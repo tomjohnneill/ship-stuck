@@ -18,7 +18,7 @@ const bookLinks = [
       "https://www.amazon.co.uk/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-21&linkId=9332ba80ee7763ffdb4af0bee2883cb7",
     title: "The Box - Marc Levinson",
     subtitle: "How the Shipping Container Made the World Smaller",
-    image: "/deepsea.jpg",
+    image: "/thebox.jpg",
     description: "The Citizen Kane of books about shipping.",
   },
   {
