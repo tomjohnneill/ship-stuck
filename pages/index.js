@@ -33,7 +33,7 @@ const bookLinks = [
   },
   {
     link:
-      "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
+      "https://www.amazon.com/gp/product/0691150095/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691150095&linkCode=as2&tag=istheshipstil-20&linkId=f2663da8713528b4910d06a037b53c06",
     title: "The Invisible Hook - Peter Leeson",
     subtitle: "The Hidden Economics of Pirates",
     image: "/pirates.jpg",
