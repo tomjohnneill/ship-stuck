@@ -18,7 +18,7 @@ const bookLinks = [
       "https://www.amazon.co.uk/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-21&linkId=9332ba80ee7763ffdb4af0bee2883cb7",
     title: "The Box - Marc Levinson",
     subtitle: "How the Shipping Container Made the World Smaller",
-    image: "/thebox.jpg",
+    image: "/smallerbox.jfif",
     description: "The Citizen Kane of books about shipping.",
   },
   {
@@ -302,6 +302,28 @@ export default function Home(props) {
       </a>
 
       <footer className={styles.footer}>
+        To be peak 2021:
+        <a
+          href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/39548461347666529560377967944030380563003576059826604202233011364559964864513"
+          target="_blank"
+          style={{
+            border: "1px solid #DBDBDB",
+            borderRadius: 4,
+            padding: 4,
+            display: "flex",
+            alignItems: "center",
+            fontSize: "12px",
+            margin: "8px 0px",
+          }}
+          rel="noopener norferrer"
+        >
+          <img
+            style={{ height: 24, marginRight: 8 }}
+            src="https://opensea.io/static/images/logos/opensea-logo.png"
+            alt="opensea"
+          />
+          Bid on the NFT of this page (on *OpenSea*)
+        </a>
         <a
           href="https://xkcd.com/937/"
           target="_blank"
