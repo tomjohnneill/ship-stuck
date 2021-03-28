@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "../styles/Home.module.css";
 
 const minute = 1000 * 60;
@@ -85,6 +85,48 @@ export default function Home(props) {
       .then((response) => response.json())
       .then((data) => setArticles(data));
   }, []);
+
+  const [easterEgg, setEasterEgg] = useState(false);
+
+  const sequence = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
+
+  const currentKey = useRef(0);
+
+  const konami = (event) => {
+    if (event.key === sequence[currentKey.current]) {
+      if (currentKey.current === 9) {
+        setEasterEgg(true);
+        currentKey.current = 0;
+      } else {
+        currentKey.current++;
+      }
+    } else {
+      setEasterEgg(false);
+      currentKey.current = 0;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", konami);
+    return () => window.removeEventListener("keydown", konami);
+  });
+
+  useEffect(() => {
+    if (easterEgg) {
+      window.location.href = "http://epicport.com/en/ttd";
+    }
+  }, [easterEgg]);
 
   return (
     <div className={styles.container}>
