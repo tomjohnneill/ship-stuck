@@ -83,7 +83,7 @@ export default function Home(props) {
     if (Math.random() > 0.999) {
       link = 'https://www.youtube.com/watch?v=jPCJIB1f7jk';
     }
-    setTimeout(() => (window.location.href = link), 20000);
+    setTimeout(() => (window.location.href = link), 90000);
   }, []);
 
   useEffect(() => {
@@ -106,7 +106,7 @@ export default function Home(props) {
     if (typeof window !== 'undefined' && typeof boatHorn.play === 'function') {
       setTimeout(() => {
         boatHorn.play();
-      }, 18000);
+      }, 88000);
     }
   }, [typeof window, typeof boatHorn.play]);
 
