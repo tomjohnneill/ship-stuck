@@ -36,14 +36,14 @@ const bookLinks = [
   },
   {
     ukLink:
-      "https://www.amazon.co.uk/gp/product/0802144160?ie=UTF8&linkCode=ll1&tag=istheshipstil-21&linkId=28daf238a6b893d7174d6383591b1d8a&language=en_GB&ref_=as_li_ss_tl",
+      "https://www.amazon.co.uk/gp/product/1408839997/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1408839997&linkCode=as2&tag=istheshipstil-21&linkId=d97d754bdae748a2e3abaca846789ce5",
     link:
-      "https://www.amazon.com/gp/product/0802144160/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0802144160&linkCode=as2&tag=istheshipstil-20&linkId=790344b5b95464d8f300581020eeeb3d",
-    title: "A Splendid Exchange - William Bernstein",
-    subtitle: "How Trade Shaped the World",
-    image: "/splendid.jpg",
+      "https://www.amazon.com/gp/product/1101912375/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1101912375&linkCode=as2&tag=istheshipstil-20&linkId=df76d618fd4dcf98e04f72cbaf62575e",
+    title: "The Silk Roads - Peter Frankopan",
+    subtitle: "A New History of the World",
+    image: "/silkroads.jpg",
     description:
-      "A lot more historical, with a focus on how trade and globalisation has always existed in some form.",
+      "A bit more knowledge of some historical trade routes could come in handy next time there's a massive ship blocking a canal.",
   },
 ];
 
@@ -184,7 +184,7 @@ export default function Home(props) {
           style={{ color: "blue", textDecoration: "underline" }}
         >
           <a
-            href="https://twitter.com/evanchill/status/1376379027393482761"
+            href="https://twitter.com/mickbk/status/1376439222501007362"
             target="_blank"
             rel="noopener norferrer"
           >
