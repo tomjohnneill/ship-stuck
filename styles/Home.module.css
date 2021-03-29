@@ -141,13 +141,13 @@
 
 @keyframes anim {
   0% {
-    transform: translateY(0px) rotate(4deg);
+    transform: translateY(0px) rotate(2deg);
   }
   50% {
-    transform: translateY(-30px) rotate(-8deg);
+    transform: translateY(-25px) rotate(-4deg);
   }
   100% {
-    transform: translateY(0px) rotate(4deg);
+    transform: translateY(0px) rotate(2deg);
   }
 }
 
@@ -174,7 +174,7 @@
     }
 
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-6px);
     }
 
     100% {
