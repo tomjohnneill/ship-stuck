@@ -52,8 +52,10 @@ const generateTimeString = (diff) => {
   const hours = Math.floor((diff - days * day) / hour);
   const minutes = Math.floor((diff - days * day - hours * hour) / minute);
 
-  if (hours === 0) {
-    return `for ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+  if (days === 0) {
+    return `for ${hours} ${hours === 1 ? "hour" : "hours"} and ${minutes} ${
+      minutes === 1 ? "minute" : "minutes"
+    }`;
   } else {
     return `for ${days} days, ${hours} ${
       hours === 1 ? "hour" : "hours"
@@ -93,7 +95,7 @@ export default function Home(props) {
   const costText = `It has cost us ${formatNumber(hoursConversion)}, so far...`;
 
   const durationText = `It was very stuck ${generateTimeString(
-    diff
+    diff - floatDiff
   )}. It's been floating a bit ${generateTimeString(floatDiff)}`;
 
   useEffect(() => {
