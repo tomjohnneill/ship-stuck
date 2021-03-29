@@ -68,17 +68,17 @@ export default function Home(props) {
 
   const suezTime = new Date("2021-03-23T09:40:00.000Z");
   // TO DO: UPDATE WITH FREE TIME
-  const freeTime = new Date("2021-03-29T10:42:00.00Z");
+  const freeTime = new Date("2021-03-29T08:19:00.00Z");
   const diff = freeTime - suezTime;
 
   const [isUK, setIsUK] = useState(false);
 
   useEffect(() => {
-    setTimeout(
-      () =>
-        (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
-      60000
-    );
+    let link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    if (Math.random() > 0.999) {
+      link = "https://www.youtube.com/watch?v=jPCJIB1f7jk";
+    }
+    setTimeout(() => (window.location.href = link), 60000);
   }, []);
 
   console.log({ diff });
