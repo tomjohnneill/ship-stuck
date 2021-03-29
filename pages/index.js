@@ -98,11 +98,9 @@ export default function Home(props) {
   const hoursConversion = Math.floor(
     (days * 24 + hours + minutes / 60) * 400000000
   ); //https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html
-  const costText = `It has cost us ${formatNumber(hoursConversion)}, so far...`;
+  const costText = `It (probably) cost "us" ${formatNumber(hoursConversion)}.`;
 
-  const durationText = `It was very stuck ${generateTimeString(
-    diff
-  )}. It's been floating a bit ${generateTimeString(floatDiff)}`;
+  const durationText = `It was stuck ${generateTimeString(diff)}`;
 
   useEffect(() => {
     fetch("/api/times")
@@ -188,6 +186,7 @@ export default function Home(props) {
         <p className={styles.description}>No!</p>
         <p>
           <a
+            style={{ textDecoration: "underline" }}
             href="https://xkcd.com/611/"
             target="_blank"
             rel="noopener noreferrer"
