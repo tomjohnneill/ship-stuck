@@ -73,7 +73,7 @@ export default function Home(props) {
 
   const suezTime = new Date("2021-03-23T09:40:00.000Z");
   // TO DO: UPDATE WITH FREE TIME
-  const freeTime = new Date("2021-03-29T09:38:00.00Z");
+  const freeTime = new Date("2021-03-29T13:18:00.00Z");
   const diff = freeTime - suezTime;
 
   const [isUK, setIsUK] = useState(false);
