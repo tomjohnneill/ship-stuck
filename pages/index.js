@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/Home.module.css";
+import UIfx from "uifx";
+import foghorn from "../public/foghorn.mp3";
 
 const minute = 1000 * 60;
 const hour = 60 * minute;
@@ -65,6 +67,7 @@ const generateTimeString = (diff) => {
 
 export default function Home(props) {
   const [articles, setArticles] = useState([]);
+  const [boatHorn, setBoatHorn] = useState({});
 
   console.log({ articles });
 
@@ -80,18 +83,26 @@ export default function Home(props) {
     if (Math.random() > 0.999) {
       link = "https://www.youtube.com/watch?v=jPCJIB1f7jk";
     }
-    setTimeout(() => (window.location.href = link), 120000);
+    setTimeout(() => (window.location.href = link), 90000);
   }, []);
 
-  console.log({ diff });
   useEffect(() => {
     if (typeof window !== "undefined" && window.navigator) {
       const { languages } = window.navigator;
       if (languages?.[0] === "en-GB") {
         setIsUK(true);
       }
+
+      setBoatHorn(
+        new UIfx(foghorn, {
+          volume: 0.5,
+          throttleMs: 100,
+        })
+      );
     }
   }, [typeof window]);
+
+  console.log({ diff });
 
   const days = Math.floor(diff / day);
   const hours = Math.floor((diff - days * day) / hour);
@@ -184,7 +195,9 @@ export default function Home(props) {
       <main className={styles.main}>
         <h1 className={styles.title}>Is that ship still stuck?</h1>
 
-        <p className={styles.description}>No!</p>
+        <p className={styles.description} onClick={() => boatHorn.play()}>
+          No!
+        </p>
         <p>
           <a
             style={{ textDecoration: "underline" }}
@@ -391,12 +404,13 @@ export default function Home(props) {
           Bid on the NFT of this page (on *OpenSea*)
         </a>
         <a
-          href="https://xkcd.com/937/"
+          href="https://timetospare.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <p>
-            <span style={{ color: "blue" }}>Tornado Guard</span> warnings apply.
+            When not ship watching, I spend my time at{" "}
+            <span style={{ color: "blue" }}>Time to Spare</span>.
           </p>
         </a>
       </footer>
