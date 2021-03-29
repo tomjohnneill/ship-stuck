@@ -184,7 +184,7 @@ export default function Home(props) {
           style={{ color: "blue", textDecoration: "underline" }}
         >
           <a
-            href="https://www.youtube.com/watch?v=JMyErD7Vf74"
+            href="https://twitter.com/AgenciesLeth/status/1376416205993611268"
             target="_blank"
             rel="noopener norferrer"
           >
