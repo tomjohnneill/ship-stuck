@@ -95,17 +95,12 @@ export default function Home(props) {
   }, [typeof window]);
 
   useEffect(() => {
-    console.log('here');
-
     if (typeof boatHorn.play === 'function') {
-      console.log('now here');
-
       let link = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
       if (Math.random() > 0.999) {
         link = 'https://www.youtube.com/watch?v=jPCJIB1f7jk';
       }
       setTimeout(() => {
-        console.log('now in horn timeout');
         boatHorn.play();
       }, 88000);
       setTimeout(() => (window.location.href = link), 90000);
