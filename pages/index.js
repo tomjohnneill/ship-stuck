@@ -1,6 +1,8 @@
-import Head from "next/head";
-import { useEffect, useState, useRef } from "react";
-import styles from "../styles/Home.module.css";
+import Head from 'next/head';
+import { useEffect, useState, useRef } from 'react';
+import styles from '../styles/Home.module.css';
+import UIfx from 'uifx';
+import foghorn from '../public/foghorn.mp3';
 
 const minute = 1000 * 60;
 const hour = 60 * minute;
@@ -13,62 +15,63 @@ function formatNumber(num) {
 const bookLinks = [
   {
     link:
-      "https://www.amazon.com/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-20&linkId=6d33695f2c14c9f1bf40ee397713997e",
+      'https://www.amazon.com/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-20&linkId=6d33695f2c14c9f1bf40ee397713997e',
     ukLink:
-      "https://www.amazon.co.uk/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-21&linkId=9332ba80ee7763ffdb4af0bee2883cb7",
-    title: "The Box - Marc Levinson",
-    subtitle: "How the Shipping Container Made the World Smaller",
-    image: "/smallerbox.jfif",
-    description: "The Citizen Kane of books about shipping.",
+      'https://www.amazon.co.uk/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-21&linkId=9332ba80ee7763ffdb4af0bee2883cb7',
+    title: 'The Box - Marc Levinson',
+    subtitle: 'How the Shipping Container Made the World Smaller',
+    image: '/smallerbox.jfif',
+    description: 'The Citizen Kane of books about shipping.',
   },
   {
     ukLink:
-      "https://www.amazon.co.uk/gp/product/1783962437/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1783962437&linkCode=as2&tag=istheshipstil-21&linkId=f5ebc770e11dfcd130d1434c3c3d867c",
+      'https://www.amazon.co.uk/gp/product/1783962437/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1783962437&linkCode=as2&tag=istheshipstil-21&linkId=f5ebc770e11dfcd130d1434c3c3d867c',
     link:
-      "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
+      'https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44',
 
-    title: "Prisoners of Geography - Tim Marshall",
+    title: 'Prisoners of Geography - Tim Marshall',
     subtitle:
-      "Ten Maps That Tell You Everything You Need To Know About Global Politics",
+      'Ten Maps That Tell You Everything You Need To Know About Global Politics',
     description:
-      "How do things like shipping lanes affect who goes to war with whom?",
-    image: "/prisoners.jpg",
+      'How do things like shipping lanes affect who goes to war with whom?',
+    image: '/prisoners.jpg',
   },
   {
     ukLink:
-      "https://www.amazon.co.uk/gp/product/0802144160?ie=UTF8&linkCode=ll1&tag=istheshipstil-21&linkId=28daf238a6b893d7174d6383591b1d8a&language=en_GB&ref_=as_li_ss_tl",
+      'https://www.amazon.co.uk/gp/product/0802144160?ie=UTF8&linkCode=ll1&tag=istheshipstil-21&linkId=28daf238a6b893d7174d6383591b1d8a&language=en_GB&ref_=as_li_ss_tl',
     link:
-      "https://www.amazon.com/gp/product/0802144160/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0802144160&linkCode=as2&tag=istheshipstil-20&linkId=790344b5b95464d8f300581020eeeb3d",
-    title: "A Splendid Exchange - William Bernstein",
-    subtitle: "How Trade Shaped the World",
-    image: "/splendid.jpg",
+      'https://www.amazon.com/gp/product/0802144160/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0802144160&linkCode=as2&tag=istheshipstil-20&linkId=790344b5b95464d8f300581020eeeb3d',
+    title: 'A Splendid Exchange - William Bernstein',
+    subtitle: 'How Trade Shaped the World',
+    image: '/splendid.jpg',
     description:
-      "A lot more historical, with a focus on how trade and globalisation has always existed in some form.",
+      'A lot more historical, with a focus on how trade and globalisation has always existed in some form.',
   },
 ];
 
-const generateTimeString = (diff) => {
+const generateTimeString = diff => {
   const days = Math.floor(diff / day);
   const hours = Math.floor((diff - days * day) / hour);
   const minutes = Math.floor((diff - days * day - hours * hour) / minute);
 
   if (hours === 0) {
-    return `for ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+    return `for ${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`;
   } else {
     return `for ${days} days, ${hours} ${
-      hours === 1 ? "hour" : "hours"
-    } and ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+      hours === 1 ? 'hour' : 'hours'
+    } and ${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`;
   }
 };
 
 export default function Home(props) {
   const [articles, setArticles] = useState([]);
+  const [boatHorn, setBoatHorn] = useState({});
 
   console.log({ articles });
 
-  const suezTime = new Date("2021-03-23T09:40:00.000Z");
+  const suezTime = new Date('2021-03-23T09:40:00.000Z');
   // TO DO: UPDATE WITH FREE TIME
-  const freeTime = new Date("2021-03-29T10:42:00.00Z");
+  const freeTime = new Date('2021-03-29T10:42:00.00Z');
   const diff = freeTime - suezTime;
 
   const [isUK, setIsUK] = useState(false);
@@ -76,20 +79,28 @@ export default function Home(props) {
   useEffect(() => {
     setTimeout(
       () =>
-        (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
+        (window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
       60000
     );
   }, []);
 
-  console.log({ diff });
   useEffect(() => {
-    if (typeof window !== "undefined" && window.navigator) {
+    if (typeof window !== 'undefined' && window.navigator) {
       const { languages } = window.navigator;
-      if (languages?.[0] === "en-GB") {
+      if (languages?.[0] === 'en-GB') {
         setIsUK(true);
       }
+
+      setBoatHorn(
+        new UIfx(foghorn, {
+          volume: 0.5,
+          throttleMs: 100,
+        })
+      );
     }
   }, [typeof window]);
+
+  console.log({ diff });
 
   const days = Math.floor(diff / day);
   const hours = Math.floor((diff - days * day) / hour);
@@ -102,29 +113,29 @@ export default function Home(props) {
   const durationText = `It was stuck ${generateTimeString(diff)}`;
 
   useEffect(() => {
-    fetch("/api/times")
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
+    fetch('/api/times')
+      .then(response => response.json())
+      .then(data => setArticles(data));
   }, []);
 
   const [easterEgg, setEasterEgg] = useState(false);
 
   const sequence = [
-    "ArrowUp",
-    "ArrowUp",
-    "ArrowDown",
-    "ArrowDown",
-    "ArrowLeft",
-    "ArrowRight",
-    "ArrowLeft",
-    "ArrowRight",
-    "b",
-    "a",
+    'ArrowUp',
+    'ArrowUp',
+    'ArrowDown',
+    'ArrowDown',
+    'ArrowLeft',
+    'ArrowRight',
+    'ArrowLeft',
+    'ArrowRight',
+    'b',
+    'a',
   ];
 
   const currentKey = useRef(0);
 
-  const konami = (event) => {
+  const konami = event => {
     if (event.key === sequence[currentKey.current]) {
       if (currentKey.current === 9) {
         setEasterEgg(true);
@@ -139,13 +150,13 @@ export default function Home(props) {
   };
 
   useEffect(() => {
-    window.addEventListener("keydown", konami);
-    return () => window.removeEventListener("keydown", konami);
+    window.addEventListener('keydown', konami);
+    return () => window.removeEventListener('keydown', konami);
   });
 
   useEffect(() => {
     if (easterEgg) {
-      window.location.href = "http://epicport.com/en/ttd";
+      window.location.href = 'http://epicport.com/en/ttd';
     }
   }, [easterEgg]);
 
@@ -176,16 +187,18 @@ export default function Home(props) {
           content="You know that ship, the one possibly still stuck in the canal. Is it still there? Find out that, and really only that, at this website."
         />
         <meta property="og:title" content="Is this ship still stuck?" />
-        <meta property="og:url" content={"https://istheshipstillstuck.com"} />
+        <meta property="og:url" content={'https://istheshipstillstuck.com'} />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>Is that ship still stuck?</h1>
 
-        <p className={styles.description}>No!</p>
+        <p className={styles.description} onClick={() => boatHorn.play()}>
+          No!
+        </p>
         <p>
           <a
-            style={{ textDecoration: "underline" }}
+            style={{ textDecoration: 'underline' }}
             href="https://xkcd.com/611/"
             target="_blank"
             rel="noopener noreferrer"
@@ -202,7 +215,7 @@ export default function Home(props) {
           Follow @tomjneill
         </a>
 
-        <p style={{ textAlign: "center" }}>
+        <p style={{ textAlign: 'center' }}>
           {durationText}. <br />
           <a
             href="https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html"
@@ -213,7 +226,7 @@ export default function Home(props) {
           </a>
         </p>
 
-        <div style={{ width: "100%", maxWidth: 600 }}>
+        <div style={{ width: '100%', maxWidth: 600 }}>
           <div
             dangerouslySetInnerHTML={{
               __html: `<script type="text/javascript">
@@ -222,13 +235,13 @@ export default function Home(props) {
 </script><script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>`,
             }}
           />
-          <div style={{ width: "100%", textAlign: "right" }}>
+          <div style={{ width: '100%', textAlign: 'right' }}>
             <p
               style={{
-                opacity: "60%",
+                opacity: '60%',
                 marginTop: 0,
                 marginBottom: 0,
-                fontSize: "12px",
+                fontSize: '12px',
               }}
             >
               <a
@@ -242,27 +255,27 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div style={{ maxWidth: 600, width: "100%", margin: "auto" }}>
-          <h3 style={{ fontSize: "24px", marginBottom: 0, marginTop: 48 }}>
+        <div style={{ maxWidth: 600, width: '100%', margin: 'auto' }}>
+          <h3 style={{ fontSize: '24px', marginBottom: 0, marginTop: 48 }}>
             Some good books on the topic
           </h3>
-          <p style={{ opacity: "80%", fontSize: "12px", marginBottom: 16 }}>
+          <p style={{ opacity: '80%', fontSize: '12px', marginBottom: 16 }}>
             These are affiliate links, I get a small fee if you buy one which
             will help cover the cost of hosting this site. I have no connection
             to the authors, I just liked their books.
           </p>
 
-          {bookLinks.map((item) => (
+          {bookLinks.map(item => (
             <a
               href={isUK ? item.ukLink : item.link}
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                display: "flex",
+                display: 'flex',
                 borderRadius: 6,
-                overflow: "hidden",
+                overflow: 'hidden',
                 marginBottom: 16,
-                border: "1px solid #DBDBDB",
+                border: '1px solid #DBDBDB',
               }}
             >
               <img src={item.image} style={{ height: 120 }} />
@@ -275,7 +288,7 @@ export default function Home(props) {
                 }}
               >
                 <div style={{ fontWeight: 600 }}>{item.title}</div>
-                <div style={{ opacity: "80%" }}>{item.subtitle}</div>
+                <div style={{ opacity: '80%' }}>{item.subtitle}</div>
                 <p className="book-description">{item.description}</p>
               </div>
             </a>
@@ -283,48 +296,48 @@ export default function Home(props) {
         </div>
         <h3
           style={{
-            textAlign: "left",
-            width: "100%",
+            textAlign: 'left',
+            width: '100%',
             maxWidth: 500,
-            margin: "auto",
+            margin: 'auto',
             marginBottom: 16,
             marginTop: 48,
-            alignItems: "center",
-            fontSize: "24px",
-            display: "flex",
-            justifyContent: "space-between",
+            alignItems: 'center',
+            fontSize: '24px',
+            display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
           Latest headlines
           <img src="https://developer.nytimes.com/files/poweredby_nytimes_200c.png" />
         </h3>
         <div className={styles.grid}>
-          {articles?.slice(0, 3)?.map((article) => (
+          {articles?.slice(0, 3)?.map(article => (
             <a href={article.web_url} key={article._id}>
               <section
                 style={{
                   maxWidth: 500,
                   borderRadius: 4,
-                  overflow: "hidden",
+                  overflow: 'hidden',
                   marginBottom: 32,
-                  border: "1px solid #DBDBDB",
+                  border: '1px solid #DBDBDB',
                 }}
               >
                 {article.multimedia[0]?.url ? (
                   <img
                     src={`https://nytimes.com/${article.multimedia[0]?.url}`}
                     style={{
-                      width: "100%",
+                      width: '100%',
                       height: 250,
-                      objectFit: "cover",
+                      objectFit: 'cover',
                     }}
                   />
                 ) : (
                   <div
                     style={{
-                      display: "flex",
-                      width: "100%",
-                      justifyContent: "center",
+                      display: 'flex',
+                      width: '100%',
+                      justifyContent: 'center',
                     }}
                   >
                     <img
@@ -332,7 +345,7 @@ export default function Home(props) {
                       alt="NYT Logo"
                       style={{
                         width: 200,
-                        marginX: "auto",
+                        marginX: 'auto',
                       }}
                     />
                   </div>
@@ -340,7 +353,7 @@ export default function Home(props) {
 
                 <div style={{ padding: 12 }}>
                   <h2 style={{ marginTop: 0 }}>{article.headline.main}</h2>
-                  <span style={{ opacity: "60%" }}>
+                  <span style={{ opacity: '60%' }}>
                     Published: {new Date(article.pub_date).toLocaleString()}
                   </span>
                   <p>{article.snippet}</p>
@@ -371,13 +384,13 @@ export default function Home(props) {
           href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/39548461347666529560377967944030380563003576059826604202233011364559964864513"
           target="_blank"
           style={{
-            border: "1px solid #DBDBDB",
+            border: '1px solid #DBDBDB',
             borderRadius: 4,
             padding: 4,
-            display: "flex",
-            alignItems: "center",
-            fontSize: "12px",
-            margin: "8px 0px",
+            display: 'flex',
+            alignItems: 'center',
+            fontSize: '12px',
+            margin: '8px 0px',
           }}
           rel="noopener norferrer"
         >
@@ -394,7 +407,7 @@ export default function Home(props) {
           rel="noopener noreferrer"
         >
           <p>
-            <span style={{ color: "blue" }}>Tornado Guard</span> warnings apply.
+            <span style={{ color: 'blue' }}>Tornado Guard</span> warnings apply.
           </p>
         </a>
       </footer>
