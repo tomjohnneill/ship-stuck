@@ -185,19 +185,16 @@ export default function Home(props) {
       <main className={styles.main}>
         <h1 className={styles.title}>Is that ship still stuck?</h1>
 
-        <p
-          className={styles.description}
-          style={{ color: "blue", textDecoration: "underline" }}
-        >
+        <p className={styles.description}>No!</p>
+        <p>
           <a
-            href="https://twitter.com/evanchill/status/1376379027393482761"
+            href="https://xkcd.com/611/"
             target="_blank"
-            rel="noopener norferrer"
+            rel="noopener noreferrer"
           >
-            Sort of?
+            What a relief.
           </a>
         </p>
-
         <a
           style={{ marginTop: 8 }}
           href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
