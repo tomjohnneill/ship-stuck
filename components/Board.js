@@ -4,7 +4,8 @@ import Matter from "matter-js";
 
 const STATIC_DENSITY = 15;
 const PARTICLE_SIZE = 6;
-const PARTICLE_BOUNCYNESS = 0.2;
+const PARTICLE_BOUNCYNESS = 0.1;
+const PARTICLE_FRICTIONAIR = 0;
 
 export const MatterStepThree = () => {
   const boxRef = useRef(null);
@@ -19,7 +20,22 @@ export const MatterStepThree = () => {
     setSomeStateValue(!someStateValue);
   };
 
-  const moveShip = (e) => {};
+  const moveShip = (e) => {
+    const ship = scene.engine.world.bodies[1];
+    if (ship) {
+      e.preventDefault();
+      const position = { x: 0, y: 0 };
+      if (e.key === "ArrowUp" || e.key === "w") {
+        Matter.Body.applyForce(ship, { x: 0, y: -100 }, { x: 0, y: -10 });
+      } else if (e.key === "ArrowDown" || e.key === "s") {
+        Matter.Body.applyForce(ship, position, { x: 0, y: 10 });
+      } else if (e.key === "ArrowLeft" || e.key === "a") {
+        Matter.Body.applyForce(ship, position, { x: -10, y: 0 });
+      } else if (e.key === "ArrowRight" || e.key === "d") {
+        Matter.Body.applyForce(ship, position, { x: 10, y: 0 });
+      }
+    }
+  };
 
   useEffect(() => {
     window.addEventListener("keydown", moveShip);
@@ -73,6 +89,17 @@ export const MatterStepThree = () => {
   useEffect(() => {
     if (constraints) {
       let { width, height } = constraints;
+
+      const bigShip = Matter.Bodies.circle(
+        width / 2,
+
+        height / 2,
+        61,
+        {
+          density: 3,
+        }
+      );
+
       // Dynamically update canvas and bounds
       scene.bounds.max.x = width;
       scene.bounds.max.y = height;
@@ -83,7 +110,7 @@ export const MatterStepThree = () => {
       // Dynamically update floor
       const floor = scene.engine.world.bodies[0];
       Matter.Body.setPosition(floor, {
-        x: width,
+        x: width * 2,
         y: height + STATIC_DENSITY / 2,
       });
       Matter.Body.setVertices(floor, [
@@ -92,10 +119,10 @@ export const MatterStepThree = () => {
         { x: width, y: height + STATIC_DENSITY },
         { x: 0, y: height + STATIC_DENSITY },
       ]);
+
+      Matter.World.add(scene.engine.world, bigShip);
     }
   }, [scene, constraints]);
-
-  const [bodies, setBodies] = useState([]);
 
   useEffect(() => {
     // Add a new "ball" everytime `someStateValue` changes
@@ -104,27 +131,38 @@ export const MatterStepThree = () => {
       let randomX = Math.floor(Math.random() * -width) + width;
       const body = Matter.Bodies.circle(randomX, 40, PARTICLE_SIZE, {
         restitution: PARTICLE_BOUNCYNESS,
+        frictionAir: PARTICLE_FRICTIONAIR,
       });
       Matter.Body.setDensity(body, 10);
-      Matter.Body.applyForce(body, { x: randomX, y: 40 }, { x: 0, y: 1 });
+      Matter.Body.applyForce(
+        body,
+        { x: randomX, y: 40 },
+        { x: 0, y: Math.random() * 4 }
+      );
       console.log(scene.engine.world.bodies);
 
-      const balls = scene.engine.world.bodies?.slice(1);
+      const balls = scene.engine.world.bodies?.slice(2);
+      const ship = scene.engine.world.bodies[1];
 
       Matter.World.add(scene.engine.world, body);
 
       balls.forEach((ball) => {
-        Matter.Body.applyForce(ball, { x: randomX, y: 40 }, { x: 0, y: 1 });
+        Matter.Body.applyForce(
+          ball,
+          { x: randomX, y: 40 },
+          { x: 0, y: Math.random() * 3 }
+        );
       });
       //setBodies([...bodies, body]);
 
       //Matter.Body.applyForce(body, { x: randomX, y: 40 }, { x: 0, y: 0.1 });
+
+      balls.forEach((ball, i) => {
+        const collision = Matter.SAT.collides(ball, ship);
+        console.log("ball", i, collision);
+      });
     }
   }, [someStateValue]);
-
-  useEffect(() => {
-    console.log({ bodies });
-  }, [bodies?.length]);
 
   return (
     <div

@@ -221,7 +221,9 @@ export default function Home(props) {
           </div>
         </div>
 
-        <Board />
+        <div style={{ width: "100%", height: 500 }}>
+          <Board />
+        </div>
 
         <div style={{ maxWidth: 600, width: "100%", margin: "auto" }}>
           <h3 style={{ fontSize: "24px", marginBottom: 0, marginTop: 48 }}>
