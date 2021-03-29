@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
+import Board from "../components/Board";
 import styles from "../styles/Home.module.css";
 
 const minute = 1000 * 60;
@@ -239,6 +240,10 @@ export default function Home(props) {
               </a>
             </p>
           </div>
+        </div>
+
+        <div style={{ width: "100%", height: 500 }}>
+          <Board />
         </div>
 
         <div style={{ maxWidth: 600, width: "100%", margin: "auto" }}>
