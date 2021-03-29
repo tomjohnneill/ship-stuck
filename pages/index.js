@@ -402,12 +402,13 @@ export default function Home(props) {
           Bid on the NFT of this page (on *OpenSea*)
         </a>
         <a
-          href="https://xkcd.com/937/"
+          href="https://timetospare.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <p>
-            <span style={{ color: 'blue' }}>Tornado Guard</span> warnings apply.
+            When not ship watching, I spend my time at{' '}
+            <span style={{ color: 'blue' }}>Time to Spare</span>.
           </p>
         </a>
       </footer>
