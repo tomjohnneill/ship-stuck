@@ -447,7 +447,7 @@ export default function Home(props) {
         <a
           href="https://timetospare.com"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
           <p>
             When not ship watching, I spend my time at{' '}
