@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/Home.module.css";
+import UIfx from "uifx";
+import foghorn from "../public/foghorn.mp3";
 
 const minute = 1000 * 60;
 const hour = 60 * minute;
@@ -65,26 +67,42 @@ const generateTimeString = (diff) => {
 
 export default function Home(props) {
   const [articles, setArticles] = useState([]);
+  const [boatHorn, setBoatHorn] = useState({});
 
   console.log({ articles });
 
   const suezTime = new Date("2021-03-23T09:40:00.000Z");
-  const floatTime = new Date("2021-03-29T03:42:00.00Z");
-  const now = new Date();
-  const diff = now - suezTime;
-  const floatDiff = now - floatTime;
+  // TO DO: UPDATE WITH FREE TIME
+  const freeTime = new Date("2021-03-29T13:18:00.00Z");
+  const diff = freeTime - suezTime;
 
   const [isUK, setIsUK] = useState(false);
 
-  console.log({ diff });
+  useEffect(() => {
+    let link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    if (Math.random() > 0.999) {
+      link = "https://www.youtube.com/watch?v=jPCJIB1f7jk";
+    }
+    setTimeout(() => (window.location.href = link), 90000);
+  }, []);
+
   useEffect(() => {
     if (typeof window !== "undefined" && window.navigator) {
       const { languages } = window.navigator;
       if (languages?.[0] === "en-GB") {
         setIsUK(true);
       }
+
+      setBoatHorn(
+        new UIfx(foghorn, {
+          volume: 0.5,
+          throttleMs: 100,
+        })
+      );
     }
   }, [typeof window]);
+
+  console.log({ diff });
 
   const days = Math.floor(diff / day);
   const hours = Math.floor((diff - days * day) / hour);
@@ -92,11 +110,9 @@ export default function Home(props) {
   const hoursConversion = Math.floor(
     (days * 24 + hours + minutes / 60) * 400000000
   ); //https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html
-  const costText = `It has cost us ${formatNumber(hoursConversion)}, so far...`;
+  const costText = `It (probably) cost "us" ${formatNumber(hoursConversion)}.`;
 
-  const durationText = `It was very stuck ${generateTimeString(
-    diff - floatDiff
-  )}. It's been floating a bit ${generateTimeString(floatDiff)}`;
+  const durationText = `It was stuck ${generateTimeString(diff)}`;
 
   useEffect(() => {
     fetch("/api/times")
@@ -179,19 +195,19 @@ export default function Home(props) {
       <main className={styles.main}>
         <h1 className={styles.title}>Is that ship still stuck?</h1>
 
-        <p
-          className={styles.description}
-          style={{ color: "blue", textDecoration: "underline" }}
-        >
+        <p className={styles.description} onClick={() => boatHorn.play()}>
+          No!
+        </p>
+        <p>
           <a
-            href="https://twitter.com/AgenciesLeth/status/1376416205993611268"
+            style={{ textDecoration: "underline" }}
+            href="https://xkcd.com/611/"
             target="_blank"
-            rel="noopener norferrer"
+            rel="noopener noreferrer"
           >
-            Sort of?
+            What a relief.
           </a>
         </p>
-
         <a
           style={{ marginTop: 8 }}
           href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
@@ -388,12 +404,13 @@ export default function Home(props) {
           Bid on the NFT of this page (on *OpenSea*)
         </a>
         <a
-          href="https://xkcd.com/937/"
+          href="https://timetospare.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <p>
-            <span style={{ color: "blue" }}>Tornado Guard</span> warnings apply.
+            When not ship watching, I spend my time at{" "}
+            <span style={{ color: "blue" }}>Time to Spare</span>.
           </p>
         </a>
       </footer>
