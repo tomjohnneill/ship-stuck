@@ -74,6 +74,14 @@ export default function Home(props) {
 
   const [isUK, setIsUK] = useState(false);
 
+  useEffect(() => {
+    setTimeout(
+      () =>
+        (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
+      60000
+    );
+  }, []);
+
   console.log({ diff });
   useEffect(() => {
     if (typeof window !== "undefined" && window.navigator) {
