@@ -47,14 +47,30 @@ const bookLinks = [
   },
 ];
 
+const generateTimeString = (diff) => {
+  const days = Math.floor(diff / day);
+  const hours = Math.floor((diff - days * day) / hour);
+  const minutes = Math.floor((diff - days * day - hours * hour) / minute);
+
+  if (hours === 0) {
+    return `for ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+  } else {
+    return `for ${days} days, ${hours} ${
+      hours === 1 ? "hour" : "hours"
+    } and ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+  }
+};
+
 export default function Home(props) {
   const [articles, setArticles] = useState([]);
 
   console.log({ articles });
 
   const suezTime = new Date("2021-03-23T09:40:00.000Z");
+  const floatTime = new Date("2021-03-29T03:42:00.00Z");
   const now = new Date();
   const diff = now - suezTime;
+  const floatDiff = now - floatTime;
 
   const [isUK, setIsUK] = useState(false);
 
@@ -76,9 +92,9 @@ export default function Home(props) {
   ); //https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html
   const costText = `It has cost us ${formatNumber(hoursConversion)}, so far...`;
 
-  const durationText = `It's been like this for ${days} days, ${hours} ${
-    hours === 1 ? "hour" : "hours"
-  } and ${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+  const durationText = `It was very stuck ${generateTimeString(
+    diff
+  )}. It's been floating a bit ${generateTimeString(floatDiff)}`;
 
   useEffect(() => {
     fetch("/api/times")
@@ -161,7 +177,10 @@ export default function Home(props) {
       <main className={styles.main}>
         <h1 className={styles.title}>Is that ship still stuck?</h1>
 
-        <p className={styles.description} style={{ color: "blue" }}>
+        <p
+          className={styles.description}
+          style={{ color: "blue", textDecoration: "underline" }}
+        >
           <a
             href="https://twitter.com/evanchill/status/1376379027393482761"
             target="_blank"
