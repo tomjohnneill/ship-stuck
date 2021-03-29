@@ -229,36 +229,34 @@ export default function Home(props) {
         </p>
 
         <div style={{ width: "100%", maxWidth: 600 }}>
-          {new Date() > new Date("2021-03-29T15:00:00.00Z") && (
-            <>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<script type="text/javascript">
+          <>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<script type="text/javascript">
   var width="100%";var height="400";var zoom="14";
   var mmsi=353136000;
 </script><script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>`,
+              }}
+            />
+            <div style={{ width: "100%", textAlign: "right" }}>
+              <p
+                style={{
+                  opacity: "60%",
+                  marginTop: 0,
+                  marginBottom: 0,
+                  fontSize: "12px",
                 }}
-              />
-              <div style={{ width: "100%", textAlign: "right" }}>
-                <p
-                  style={{
-                    opacity: "60%",
-                    marginTop: 0,
-                    marginBottom: 0,
-                    fontSize: "12px",
-                  }}
+              >
+                <a
+                  href="https://www.openstreetmap.org/copyright"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <a
-                    href="https://www.openstreetmap.org/copyright"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    © OpenStreetMap contributors
-                  </a>
-                </p>
-              </div>
-            </>
-          )}
+                  © OpenStreetMap contributors
+                </a>
+              </p>
+            </div>
+          </>
         </div>
 
         <div style={{ maxWidth: 600, width: "100%", margin: "auto" }}>
