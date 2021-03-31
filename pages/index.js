@@ -224,23 +224,16 @@ export default function Home(props) {
         <p className={styles.description} onClick={() => boatHorn.play()}>
           No!
         </p>
-        <p>
-          <a
-            style={{ textDecoration: "underline" }}
-            href="https://xkcd.com/611/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            What a relief.
-          </a>
-        </p>
+
         <a
-          style={{ marginTop: 8 }}
-          href="https://twitter.com/tomjneill?ref_src=twsrc%5Etfw"
+          style={{ marginTop: 8, textDecoration: "underline" }}
+          href="https://notfunatparties.substack.com/p/inside-a-viral-website"
           class="twitter-follow-button"
+          rel="noopener norferrer"
+          target="_blank"
           data-show-count="false"
         >
-          Follow @tomjneill
+          Read more about this
         </a>
 
         <p style={{ textAlign: "center" }}>
