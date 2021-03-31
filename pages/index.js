@@ -226,14 +226,27 @@ export default function Home(props) {
         </p>
 
         <a
-          style={{ marginTop: 8, textDecoration: "underline" }}
+          style={{
+            marginTop: 8,
+            display: "flex",
+            alignItems: "center",
+            fontSize: "12px",
+            cursor: "pointer",
+            border: "1px solid #DBDBDB",
+            borderRadius: 4,
+            padding: 4,
+          }}
           href="https://notfunatparties.substack.com/p/inside-a-viral-website"
           class="twitter-follow-button"
           rel="noopener norferrer"
           target="_blank"
           data-show-count="false"
         >
-          Read more about this
+          <img
+            src="https://cdn.substack.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F49be2356-6491-4a6f-84a5-15e99d23b6d1_256x256.png"
+            style={{ height: 24, marginRight: 4 }}
+          />
+          Read the behind the scenes
         </a>
 
         <p style={{ textAlign: "center" }}>
