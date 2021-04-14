@@ -224,6 +224,15 @@ export default function Home(props) {
         <p className={styles.description} onClick={() => boatHorn.play()}>
           No!
         </p>
+        <p style={{ textDecoration: "underline", marginTop: 0 }}>
+          <a
+            href="https://www.caranddriver.com/news/a36083944/suez-canal-evergreen-ship-fined/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            But it is apparently being held hostage.
+          </a>
+        </p>
 
         <a
           style={{
