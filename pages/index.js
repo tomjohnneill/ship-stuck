@@ -14,6 +14,13 @@ function formatNumber(num) {
 
 const bookLinks = [
   {
+    link: "https://gumroad.com/l/flexport",
+    ukLink: "https://gumroad.com/l/flexport",
+    title: "The Big Ship and the Little Digger - Ryan Petersen",
+    image: "/bigship.webp",
+    description: `The Big Ship and the Little Digger" is a children's story about the power of naive optimism to move impossibly large obstacles that get in your way. All proceeds go to charity.`,
+  },
+  {
     link:
       "https://www.amazon.com/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-20&linkId=6d33695f2c14c9f1bf40ee397713997e",
     ukLink:
@@ -57,29 +64,6 @@ const bookLinks = [
       "Inside Shipping, the Invisible Industry that Brings You 90% of Everything",
     image: "/deepsea.jpg",
     description: "An account of what life is actually like on a cargo ship.",
-  },
-  {
-    ukLink:
-      "https://www.amazon.co.uk/Invisible-Hook-Hidden-Economics-Pirates/dp/0691150095?dchild=1&keywords=invisible+hook+pirates&qid=1617033100&sr=8-1&linkCode=ll1&tag=istheshipstil-21&linkId=21d9eb0609ce262e09da85d7861575b5&language=en_GB&ref_=as_li_ss_tl",
-    link:
-      "https://www.amazon.com/gp/product/0691150095/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691150095&linkCode=as2&tag=istheshipstil-20&linkId=f2663da8713528b4910d06a037b53c06",
-    title: "The Invisible Hook - Peter Leeson",
-    subtitle: "The Hidden Economics of Pirates",
-    image: "/pirates.jpg",
-    description:
-      "Not exactly related to canals... but everyone likes reading stuff about pirates right?",
-  },
-
-  {
-    ukLink:
-      "https://www.amazon.co.uk/Ocean-Life-Fate-Man-Sea/dp/0143123483?dchild=1&keywords=ocean+of+life&qid=1617033156&sr=8-1&linkCode=ll1&tag=istheshipstil-21&linkId=543a526b323b153e4fbeeac668d64ef6&language=en_GB&ref_=as_li_ss_tl",
-    link:
-      "https://www.amazon.com/Ocean-Life-Fate-Man-Sea/dp/0143123483?crid=36WFME10YV1LE&dchild=1&keywords=ocean+of+life+callum+roberts&qid=1617033221&sprefix=ocean+of+life%2Caps%2C220&sr=8-1&linkCode=ll1&tag=istheshipstil-20&linkId=3c15b6103e985ed1c0703530a81e3e0d&language=en_US&ref_=as_li_ss_tl",
-    title: "The Ocean of Life",
-    subtitle: "The Fate of Man and the Sea",
-    image: "/ocena.jpg",
-    description:
-      "A book about how important the ocean is. Made me want to buy up a big patch of it and turn it all into national parks.",
   },
 ];
 
@@ -319,6 +303,7 @@ export default function Home(props) {
                 display: "flex",
                 borderRadius: 6,
                 overflow: "hidden",
+                cursor: "pointer",
                 marginBottom: 16,
                 border: "1px solid #DBDBDB",
               }}
