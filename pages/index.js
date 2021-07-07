@@ -21,8 +21,7 @@ const bookLinks = [
     description: `The Big Ship and the Little Digger" is a children's story about the power of naive optimism to move impossibly large obstacles that get in your way. All proceeds go to charity.`,
   },
   {
-    link:
-      "https://www.amazon.com/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-20&linkId=6d33695f2c14c9f1bf40ee397713997e",
+    link: "https://www.amazon.com/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-20&linkId=6d33695f2c14c9f1bf40ee397713997e",
     ukLink:
       "https://www.amazon.co.uk/gp/product/0691170819/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0691170819&linkCode=as2&tag=istheshipstil-21&linkId=9332ba80ee7763ffdb4af0bee2883cb7",
     title: "The Box - Marc Levinson",
@@ -33,8 +32,7 @@ const bookLinks = [
   {
     ukLink:
       "https://www.amazon.co.uk/gp/product/1783962437/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1783962437&linkCode=as2&tag=istheshipstil-21&linkId=f5ebc770e11dfcd130d1434c3c3d867c",
-    link:
-      "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
+    link: "https://www.amazon.com/gp/product/1501121472/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1501121472&linkCode=as2&tag=istheshipstil-20&linkId=fc8fdb11b99567d772fcf27f914abf44",
 
     title: "Prisoners of Geography - Tim Marshall",
     subtitle:
@@ -46,8 +44,7 @@ const bookLinks = [
   {
     ukLink:
       "https://www.amazon.co.uk/gp/product/1408839997/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1408839997&linkCode=as2&tag=istheshipstil-21&linkId=d97d754bdae748a2e3abaca846789ce5",
-    link:
-      "https://www.amazon.com/gp/product/1101912375/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1101912375&linkCode=as2&tag=istheshipstil-20&linkId=df76d618fd4dcf98e04f72cbaf62575e",
+    link: "https://www.amazon.com/gp/product/1101912375/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1101912375&linkCode=as2&tag=istheshipstil-20&linkId=df76d618fd4dcf98e04f72cbaf62575e",
     title: "The Silk Roads - Peter Frankopan",
     subtitle: "A New History of the World",
     image: "/silkroads.jpg",
@@ -57,8 +54,7 @@ const bookLinks = [
   {
     ukLink:
       "https://www.amazon.co.uk/gp/product/1846272998/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1846272998&linkCode=as2&tag=istheshipstil-21&linkId=e49e81bbdaa5b64220a3879fd0e28e08",
-    link:
-      "https://www.amazon.com/gp/product/1250058295/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1250058295&linkCode=as2&tag=istheshipstil-20&linkId=7b4ccbbfdd7f6ce5b150d333bf13c769",
+    link: "https://www.amazon.com/gp/product/1250058295/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1250058295&linkCode=as2&tag=istheshipstil-20&linkId=7b4ccbbfdd7f6ce5b150d333bf13c769",
     title: "Deep Sea and Foreign Going - Rose George",
     subtitle:
       "Inside Shipping, the Invisible Industry that Brings You 90% of Everything",
@@ -206,15 +202,15 @@ export default function Home(props) {
         <h1 className={styles.title}>Is that ship still stuck?</h1>
 
         <p className={styles.description} onClick={() => boatHorn.play()}>
-          No!
+          No! It's on the move!
         </p>
         <p style={{ textDecoration: "underline", marginTop: 0 }}>
           <a
-            href="https://www.caranddriver.com/news/a36083944/suez-canal-evergreen-ship-fined/"
+            href="https://www.bbc.co.uk/news/world-middle-east-57746424"
             target="_blank"
             rel="noopener noreferrer"
           >
-            But it is apparently being held hostage.
+            Finally!
           </a>
         </p>
 
