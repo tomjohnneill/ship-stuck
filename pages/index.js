@@ -183,11 +183,11 @@ export default function Home(props) {
         <meta name="twitter:description" content="2 SHIP 2 STUCK" />
         <meta
           name="twitter:image"
-          content="https://i.ibb.co/ykWF3hB/2ship2stuck.png"
+          content="https://i.ibb.co/QQH8gVG/2ship2stuck.png"
         />
         <meta
           property="og:image"
-          content="https://i.ibb.co/ykWF3hB/2ship2stuck.png"
+          content="https://i.ibb.co/QQH8gVG/2ship2stuck.png"
         />
         <meta name="twitter:image:alt" content="That ship" />
         <meta property="og:description" content="2 SHIP 2 STUCK" />
