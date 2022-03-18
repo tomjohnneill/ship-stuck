@@ -180,7 +180,10 @@ export default function Home(props) {
           name="twitter:title"
           content="Is this (other) ship still stuck?"
         />
-        <meta name="twitter:description" content="2 SHIP 2 STUCK" />
+        <meta
+          name="twitter:description"
+          content="2 SHIP 2 STUCK. STUCK HARDER"
+        />
         <meta
           name="twitter:image"
           content="https://i.ibb.co/QQH8gVG/2ship2stuck.png"
@@ -190,7 +193,10 @@ export default function Home(props) {
           content="https://i.ibb.co/QQH8gVG/2ship2stuck.png"
         />
         <meta name="twitter:image:alt" content="That ship" />
-        <meta property="og:description" content="2 SHIP 2 STUCK" />
+        <meta
+          property="og:description"
+          content="2 SHIP 2 STUCK. STUCK HARDER."
+        />
         <meta property="og:title" content="Is this ship still stuck?" />
         <meta property="og:url" content={"https://istheshipstillstuck.com"} />
       </Head>
@@ -202,7 +208,7 @@ export default function Home(props) {
         </h1>
 
         <p className={styles.description} onClick={() => boatHorn.play()}>
-          Yes! It's stuck!
+          Yes.
         </p>
         <p style={{ textDecoration: "underline", marginTop: 0 }}>
           <a
