@@ -176,24 +176,21 @@ export default function Home(props) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@tomjneill" />
         <meta name="twitter:creator" content="@tomjneill" />
-        <meta name="twitter:title" content="Is this ship still stuck?" />
         <meta
-          name="twitter:description"
-          content="You know that ship, the one possibly still stuck in the canal. Is it still there? Find out that, and really only that, at this website."
+          name="twitter:title"
+          content="Is this (other) ship still stuck?"
         />
+        <meta name="twitter:description" content="2 SHIP 2 STUCK" />
         <meta
           name="twitter:image"
-          content="https://istheshipstillstuck.com/ever-given.jpg"
+          content="https://i.ibb.co/ykWF3hB/2ship2stuck.png"
         />
         <meta
           property="og:image"
-          content="https://istheshipstillstuck.com/ever-given.jpg"
+          content="https://i.ibb.co/ykWF3hB/2ship2stuck.png"
         />
         <meta name="twitter:image:alt" content="That ship" />
-        <meta
-          property="og:description"
-          content="You know that ship, the one possibly still stuck in the canal. Is it still there? Find out that, and really only that, at this website."
-        />
+        <meta property="og:description" content="2 SHIP 2 STUCK" />
         <meta property="og:title" content="Is this ship still stuck?" />
         <meta property="og:url" content={"https://istheshipstillstuck.com"} />
       </Head>
