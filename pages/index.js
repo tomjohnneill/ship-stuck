@@ -176,51 +176,45 @@ export default function Home(props) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@tomjneill" />
         <meta name="twitter:creator" content="@tomjneill" />
-        <meta
-          name="twitter:title"
-          content="Is this (other) ship still stuck?"
-        />
+        <meta name="twitter:title" content="Is this ship still stuck?" />
         <meta
           name="twitter:description"
-          content="2 SHIP 2 STUCK. STUCK HARDER"
+          content="You know that ship, the one possibly still stuck in the canal. Is it still there? Find out that, and really only that, at this website."
         />
         <meta
           name="twitter:image"
-          content="https://i.ibb.co/QQH8gVG/2ship2stuck.png"
+          content="https://istheshipstillstuck.com/ever-given.jpg"
         />
         <meta
           property="og:image"
-          content="https://i.ibb.co/QQH8gVG/2ship2stuck.png"
+          content="https://istheshipstillstuck.com/ever-given.jpg"
         />
         <meta name="twitter:image:alt" content="That ship" />
         <meta
           property="og:description"
-          content="2 SHIP 2 STUCK. STUCK HARDER."
+          content="You know that ship, the one possibly still stuck in the canal. Is it still there? Find out that, and really only that, at this website."
         />
         <meta property="og:title" content="Is this ship still stuck?" />
         <meta property="og:url" content={"https://istheshipstillstuck.com"} />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Is that <i style={{ fontWeight: "normal" }}>(other)</i> ship still
-          stuck?
-        </h1>
+        <h1 className={styles.title}>Is that ship still stuck?</h1>
 
         <p className={styles.description} onClick={() => boatHorn.play()}>
-          Yes.
+          No! It's on the move!
         </p>
         <p style={{ textDecoration: "underline", marginTop: 0 }}>
           <a
-            href="https://www.bbc.co.uk/news/world-us-canada-60754135"
+            href="https://www.bbc.co.uk/news/world-middle-east-57746424"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read more.
+            Finally!
           </a>
         </p>
-        {/*
-          <a
+
+        <a
           style={{
             marginTop: 8,
             display: "flex",
@@ -243,11 +237,16 @@ export default function Home(props) {
           />
           Read the behind the scenes
         </a>
-          */}
 
         <p style={{ textAlign: "center" }}>
-          This one is a lot more chill. <br />
-          You can basically just drive around it.
+          {durationText}. <br />
+          <a
+            href="https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {costText}
+          </a>
         </p>
 
         <div style={{ width: "100%", maxWidth: 600 }}>
@@ -256,7 +255,7 @@ export default function Home(props) {
               dangerouslySetInnerHTML={{
                 __html: `<script type="text/javascript">
   var width="100%";var height="400";var zoom="14";
-  var mmsi=477624800;
+  var mmsi=353136000;
 </script><script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>`,
               }}
             />
@@ -406,9 +405,9 @@ export default function Home(props) {
       </a>
 
       <footer className={styles.footer}>
-        To be peak 2022:
+        To be peak 2021:
         <a
-          href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/39548461347666529560377967944030380563003576059826604202233011365659476492289/"
+          href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/39548461347666529560377967944030380563003576059826604202233011364559964864513"
           target="_blank"
           style={{
             border: "1px solid #DBDBDB",
