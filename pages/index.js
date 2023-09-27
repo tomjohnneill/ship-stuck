@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/Home.module.css";
-// import UIfx from "uifx";
-// import foghorn from "../public/foghorn.mp3";
 
 const minute = 1000 * 60;
 const hour = 60 * minute;
