@@ -112,7 +112,7 @@ export default function Home(props) {
   const hours = Math.floor((diff - days * day) / hour);
   const minutes = Math.floor((diff - days * day - hours * hour) / minute);
   const hoursConversion = Math.floor(
-    (days * 24 + hours + minutes / 60) * 400000000
+    (days * 24 + hours + minutes / 60) * 400000000,
   ); //https://www.cnbc.com/2021/03/25/suez-canal-blockage-is-delaying-an-estimated-400-million-an-hour-in-goods.html
   const costText = `It (probably) cost "us" ${formatNumber(hoursConversion)}.`;
 
@@ -403,7 +403,7 @@ export default function Home(props) {
       </a>
 
       <footer className={styles.footer}>
-        <a href="https://plinth.org.uk" target="_blank" rel="noopener">
+        <a href="https://www.useplinth.com" target="_blank" rel="noopener">
           <p>
             When not ship watching, I spend my time at{" "}
             <span style={{ color: "blue" }}>plinth</span>.
